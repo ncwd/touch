@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+ROOT=$(dirname $(readlink -f "$0"))
+
+export GIT_SSH=$ROOT/ncwd-ssh
+
+git -c user.email=ncwd -c user.name=ncwd "$@"
